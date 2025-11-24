@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR 3D Model Viewer (iOS対応)</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        /* model-viewerが画面全体に表示されるようにスタイルを適用 */
+        model-viewer {
+            width: 100%;
+            height: 100vh; /* 画面の高さ全体 */
+            background-color: #eee;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <model-viewer 
+        src="./102010428v1.glb" 
+        ios-src="./your-model.usdz"
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        auto-rotate 
+        alt="TEST"
+        shadow-intensity="1"
+    >
+        <button slot="ar-button" style="background-color: #333; color: white; border-radius: 4px; border: none; padding: 12px 24px; position: absolute; bottom: 16px; right: 16px; cursor: pointer; font-weight: bold;">
+            ✨ ARで見る (iOS / Android)
+        </button>
+    </model-viewer>
+
+</body>
+</html>
