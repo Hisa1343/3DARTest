@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR 3D Model Viewer (iOS対応)</title>
+    <title>AR 3D Model Viewer (中央ボタン)</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
         /* model-viewerが画面全体に表示されるようにスタイルを適用 */
@@ -26,11 +26,29 @@
         ar-modes="webxr scene-viewer quick-look" 
         camera-controls 
         auto-rotate 
-        alt="TEST"
+        alt="ARで表示する3Dモデル"
         shadow-intensity="1"
     >
-        <button slot="ar-button" style="background-color: #333; color: white; border-radius: 4px; border: none; padding: 12px 24px; position: absolute; bottom: 16px; right: 16px; cursor: pointer; font-weight: bold;">
-            ✨ ARで見る (iOS / Android)
+        <button 
+            slot="ar-button" 
+            style="
+                /* デザイン */
+                background-color: #5b5; 
+                color: white; 
+                border-radius: 4px; 
+                border: none; 
+                padding: 12px 24px; 
+                cursor: pointer; 
+                font-weight: bold;
+                
+                /* 位置調整 */
+                position: absolute;           /* 絶対配置を有効化 */
+                bottom: 50px;                 /* 画面下端から50px上に配置（押しやすい高さ） */
+                left: 50%;                    /* 左端から50%の位置に移動 */
+                transform: translateX(-50%);  /* 要素の幅の半分だけ左に戻し、水平方向で中央に配置 */
+            "
+        >
+            🌐 ARを起動
         </button>
     </model-viewer>
 
